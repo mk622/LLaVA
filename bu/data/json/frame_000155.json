@@ -1,0 +1,10 @@
+{
+  "is_forbidden": true,
+  "reason": "tire",
+  "point": [
+    0.22,
+    0.3,
+    0.48,
+    0.82
+  ]
+}

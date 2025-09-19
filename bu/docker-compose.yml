@@ -1,0 +1,33 @@
+services:
+  vllm:
+    build:
+      context: ./vllm
+      dockerfile: Dockerfile
+    container_name: llava-vllm-1
+    ports:
+      - "9000:8000"
+    environment:
+      - HF_HOME=/root/.cache/huggingface
+      - HF_HUB_ENABLE_HF_TRANSFER=1
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    volumes:
+      - ./data:/data:ro
+      - ./vllm/templates:/opt/templates:ro
+      - ./hf_cache:/root/.cache/huggingface
+    command:
+      - "--model=llava-hf/llava-1.5-7b-hf"
+      - "--chat-template=/opt/templates/template_llava.jinja"
+      - "--trust-remote-code"
+      - "--enforce-eager"
+      - "--gpu-memory-utilization=0.6"
+      - "--max-model-len=2048"
+    healthcheck:
+      test: ["CMD", "bash", "-lc", "curl -sf http://localhost:8000/v1/models >/dev/null"]
+      interval: 30s
+      timeout: 8s
+      retries: 20

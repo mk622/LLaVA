@@ -1,0 +1,1000 @@
+  944  ls
+  945  cd github/
+  946  ls
+  947  cd mk622/
+  948  ls
+  949  cd matsu_tools/
+  950  ls
+  951  cd server/
+  952  ls
+  953  cd dify/
+  954  ls
+  955  docker ps
+  956  docker inspect b08804ede433
+  957  cd デスクトップ/github/host/LibreChat/
+  958  dockere compose down
+  959  ls
+  960  docker compose down
+  961  docker compose up --build -d
+  962  ls
+  963  cd デスクトップ/
+  964  cd github/mk622/
+  965  ls
+  966  cd matsu_tools/
+  967  ls
+  968  cd mcp
+  969  ls
+  970  cd jupyter_mcp/
+  971  ls
+  972  docker compose up --build
+  973  docker ps
+  974  docker stop 242b15265a8ce824f4638f7d
+  975  docker stop 242b15265a 8ce824f4638f7d
+  976  docker stop 242b15265a8c e824f4638f7d
+  977  docker compose up --build
+  978  docker compose up --build -d
+  979  sudo openfortivpn -c /etc/openfortivpn/config
+  980  sudo vim /etc/openfortivpn/config
+  981  sudo openfortivpn -c /etc/openfortivpn/config
+  982  sudo vim /etc/openfortivpn/config
+  983  sudo openfortivpn -c /etc/openfortivpn/config
+  984  sudo vim /etc/openfortivpn/config
+  985  ssh nses@192.168.233.101
+  986  ls
+  987  cd デスクトップ/
+  988  ls
+  989  cat memo 
+  990  sudo vim /etc/openfortivpn/config
+  991  sudo openfortivpn -c /etc/openfortivpn/config
+  992  cd デスクトップ/
+  993  ls
+  994  cd github/
+  995  ls
+  996  cd host/
+  997  ls
+  998  cd dify/
+  999  ls
+ 1000  docker compose up --build
+ 1001  cd docker/
+ 1002  ls
+ 1003  docker compose up --build
+ 1004  sudo apt-get update
+ 1005  # GitHub CLI の鍵とリポ定義を正しく入れ直し
+ 1006  curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg   | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+ 1007  sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+ 1008  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"   | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+ 1009  sudo apt-get update
+ 1010  docker compose version
+ 1011  sudo apt-get install -y docker-compose-plugin
+ 1012  docker compose version  # v2.36.0 以上になっていればOK
+ 1013  # 直せるまでの暫定回避（並列 pull/up を抑制）
+ 1014  export COMPOSE_PARALLEL_LIMIT=1
+ 1015  docker compose pull
+ 1016  docker compose up -d
+ 1017  docker compose ps
+ 1018  sudo ufw allow 8020/tcp
+ 1019  sudo ufw allow 8043/tcp
+ 1020  docker compose up --build
+ 1021  docker compose up --build -d
+ 1022  cd デスクトップ/
+ 1023  ls
+ 1024  cd github/
+ 1025  ls
+ 1026  cd host/
+ 1027  ls
+ 1028  pwd
+ 1029  rsync -avz ~/Desktop/nses_training_sim/tmp/dify nse@192.168.233.1:/home/nse/デスクトップ/github/host/
+ 1030  scp -r ~/Desktop/nses_training_sim/tmp/dify nse@192.168.233.1:/home/nse/デスクトップ/github/host/
+ 1031  rsync -avz nses@192.168.233.101:/home/nses/Desktop/nses_training_sim/tmp/dify /home/nse/デスクトップ/github/host/
+ 1032  cd デスクトップ/
+ 1033  ls
+ 1034  mkdir NAS_HC
+ 1035  ls
+ 1036  cd NAS_HC/
+ 1037  ls
+ 1038  pwd
+ 1039  scp -r admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/{2025-08-25,2025-08-26,2025-08-27,2025-08-28,2025-08-29,2025-08-30,2025-08-31,2025-09-01,2025-09-02,2025-09-03,2025-09-04,2025-09-05,2025-09-06,2025-09-07,2025-09-08,2025-09-09,2025-09-10} /home/nse/デスクトップ/NAS_HC/
+ 1040  rsync -avz --progress admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31} /home/nse/デスクトップ/NAS_HC/chanel1
+ 1041  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel1 &
+ 1042  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel2 &
+ 1043  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel3/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel3/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel3 &
+ 1044  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel4/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel4/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel4 &
+ 1045  # 全てのコピー完了を待つ
+ 1046  wait
+ 1047  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/.../channel1/...   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1048  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1049  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1050  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel2
+ 1051  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel3/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel3/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel3
+ 1052  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel4/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel4/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel4
+ 1053  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1054  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-09-{01..10}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1055  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1056  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel1/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/chanel1
+ 1057  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/chanel2
+ 1058  rsync -avz --ignore-existing --progress -R   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel2/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel3/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel4/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/
+ 1059  rsync -avz --ignore-existing --progress -R   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel1/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel2/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel3/2025-08-{25..31}   admin@10.63.25.121:/share/Video_maero/record_nvr/./channel4/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/
+ 1060  rsync -avz ~/Desktop/nses_training_sim/tmp/dify nse@192.168.233.1:/home/nse/デスクトップ/github/host/
+ 1061  cd ../gi
+ 1062  cd ../
+ 1063  ls
+ 1064  cd da
+ 1065  ls
+ 1066  rsync -avz --ignore-existing --progress -R   admin@10.62.25.121:/share/Video_maero/record_nvr/./channel1/2025-08-{25..31}   admin@10.62.25.121:/share/Video_maero/record_nvr/./channel2/2025-08-{25..31}   admin@10.62.25.121:/share/Video_maero/record_nvr/./channel3/2025-08-{25..31}   admin@10.62.25.121:/share/Video_maero/record_nvr/./channel1/2025-08-{25..31}   /home/nse/デスクトップ/github/data/CT_NAS/
+ 1067  ssh admin@10.62.27.121
+ 1068  rsync -avz --ignore-existing --progress -R   admin@10.62.25.121:/share/video/record_nvr/./channel1/2025-08-{25..31}   admin@10.62.25.121:/share/video/record_nvr/./channel2/2025-08-{25..31}   admin@10.62.25.121:/share/video/record_nvr/./channel3/2025-08-{25..31}   admin@10.62.25.121:/share/video/record_nvr/./channel1/2025-08-{25..31}   /home/nse/デスクトップ/github/data/CT_NAS/
+ 1069  rsync -avz --ignore-existing --progress -R   admin@10.62.27.121:/share/video/record_nvr/./channel1/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel2/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel3/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel1/2025-08-{25..31}   /home/nse/デスクトップ/github/data/CT_NAS/
+ 1070  rsync -avz --ignore-existing --progress -R   admin@10.62.27.121:/share/video/record_nvr/./channel1/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel2/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel3/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel4/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel5/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel6/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel7/2025-08-{25..31}   admin@10.62.27.121:/share/video/record_nvr/./channel8/2025-08-{25..31}   /home/nse/デスクトップ/github/data/CT_NAS/
+ 1071  ssh admin@10.63.25.121
+ 1072  rsync -avz --progress admin@10.63.25.121:/share/Video_maero/record_nvr/channel2/2025-08-{25..31} /home/nse/デスクトップ/NAS_HC/chanel2
+ 1073  rsync -avz --ignore-existing --progress   admin@10.63.25.121:/share/Video_maero/record_nvr/channel3/2025-08-{25..31}   /home/nse/デスクトップ/NAS_HC/chanel3
+ 1074  ssh nses@192.168.233.101
+ 1075  ssh user@10.66.233.104
+ 1076  ssh -p 2222 user@10.66.233.104
+ 1077  ssh user@10.66.233.104
+ 1078  ls
+ 1079  pwd
+ 1080  # ローカル（Linux）で実行
+ 1081  scp -r ~/デスクトップ/github/opc_influxdb_client_trigger     user@10.66.233.104:Desktop/
+ 1082  ssh user@10.66.233.104
+ 1083  scp -r ~/デスクトップ/github/opc_influxdb_client_trigger     user@10.66.233.104:Desktop/
+ 1084  ssh user@10.66.233.104
+ 1085  cd デスクトップ/
+ 1086  cd
+ 1087  cd デスクトップ/
+ 1088  cd github/mk622/hk_agent_analysis/
+ 1089  ls
+ 1090  cd data
+ 1091  ls
+ 1092  python3 read_csv.py 
+ 1093  ls
+ 1094  cd デスクトップ/
+ 1095  ls
+ 1096  cd github/
+ 1097  ls
+ 1098  sudo rmdir -f opc_influxdb_client_trigger/
+ 1099  rmdir opc_influxdb_client_trigger/
+ 1100  sudo rmdir opc_influxdb_client_trigger/
+ 1101  rm -rf opc_influxdb_client_trigger/
+ 1102  ls
+ 1103  cd mk622/
+ 1104  ls
+ 1105  cd ../
+ 1106  ls
+ 1107  cd host/
+ 1108  ls
+ 1109  cd dify/
+ 1110  l
+ 1111  cd docker/
+ 1112  ls
+ 1113  docker compose up --build
+ 1114  docker compose up --build -d
+ 1115  docker ps
+ 1116  docker compose exec jupyter curl -f http://host.docker.internal:8086/ping
+ 1117  docker compose exec jupyter_mcp curl -f http://host.docker.internal:8086/ping
+ 1118  docker ps
+ 1119  cd デスクトップ/github/mk622/matsu_tools/mcp
+ 1120  ls
+ 1121  cd jupyter_mcp/
+ 1122  ls
+ 1123  docker compose exec jupyter curl -f http://host.docker.internal:8086/ping
+ 1124  docker compose exec jupyter_mcp curl -f http://host.docker.internal:8086/ping
+ 1125  docker compose exec jupyter_mcp getent hosts host.docker.internal
+ 1126  docker compose exec jupyter_mcp python - <<'PY'
+ 1127          import os, requests, sys
+ 1128          url = os.getenv("INFLUXDB_V2_URL", "http://host.docker.internal:8086") + "/ping"
+ 1129          try:
+ 1130              r = requests.get(url, timeout=3)
+ 1131              r.raise_for_status()
+ 1132              print("OK   :", r.status_code)      # 204 が返れば成功
+ 1133          except Exception as e:
+ 1134              print("FAIL :", e, file=sys.stderr)
+ 1135              sys.exit(1)
+ 1136          PY
+ 1137  docker compose exec jupyter_mcp python
+ 1138  docker compose exec jupyter_mcp           python - <<'PY'
+ 1139          import os, requests, sys
+ 1140          url = os.getenv("INFLUXDB_V2_URL", "http://host.docker.internal:8086") + "/ping"
+ 1141          try:
+ 1142              r = requests.get(url, timeout=3)
+ 1143              r.raise_for_status()
+ 1144              print("OK  :", r.status_code)      # ← 204 が返れば成功
+ 1145          except Exception as e:
+ 1146              print("FAIL:", e, file=sys.stderr)
+ 1147              sys.exit(1)
+ 1148          PY
+ 1149  docker compose exec jupyter_mcp python - <<'PY'
+ 1150          import os, requests, sys
+ 1151          url = os.getenv("INFLUXDB_V2_URL", "http://host.docker.internal:8086") + "/ping"
+ 1152          try:
+ 1153              r = requests.get(url, timeout=3)
+ 1154              r.raise_for_status()
+ 1155              print("OK :", r.status_code)   # 204 なら成功
+ 1156          except Exception as e:
+ 1157              print("FAIL:", e, file=sys.stderr)
+ 1158              sys.exit(1)
+ 1159          PY
+ 1160  docker compose exec jupyter_mcp python - <<'PY'
+ 1161  import os, requests, sys
+ 1162  url = os.getenv("INFLUXDB_V2_URL", "http://host.docker.internal:8086") + "/ping"
+ 1163  try:
+ 1164      r = requests.get(url, timeout=3)
+ 1165      r.raise_for_status()
+ 1166      print("OK :", r.status_code)   # 204 なら成功
+ 1167  except Exception as e:
+ 1168      print("FAIL:", e, file=sys.stderr)
+ 1169      sys.exit(1)
+ 1170  PY
+ 1171  docker compose exec -T jupyter_mcp python - <<'PY'
+ 1172  import os, requests, sys
+ 1173  url = os.getenv("INFLUXDB_V2_URL", "http://host.docker.internal:8086") + "/ping"
+ 1174  try:
+ 1175      r = requests.get(url, timeout=3)
+ 1176      r.raise_for_status()
+ 1177      print("OK :", r.status_code)   # 204 が返れば成功
+ 1178  except Exception as e:
+ 1179      print("FAIL:", e, file=sys.stderr)
+ 1180      sys.exit(1)
+ 1181  PY
+ 1182  ls
+ 1183  docker ps
+ 1184  cd デスクトップ/
+ 1185  ls
+ 1186  cd github/mk622/matsu_tools/mcp/jupyter_mcp/
+ 1187  ls
+ 1188  codex
+ 1189  cd デスクトップ/github/mk622/mc
+ 1190  cd デスクトップ/github/mk622
+ 1191  ls
+ 1192  cd matsu_tools/
+ 1193  ls
+ 1194  cd mcp
+ 1195  ls
+ 1196  cd jupyter_mcp/
+ 1197  ls
+ 1198  tree
+ 1199  ls
+ 1200  cat docker-compose.yaml 
+ 1201  cat Dockerfile 
+ 1202  cat .env
+ 1203  # jupyter_mcp コンテナに入る
+ 1204  docker compose exec jupyter_mcp bash -lc 'pwd; whoami; ls -ld /home/jovyan/work /home/jovyan/work/runs || true'
+ 1205  cd デスクトップ/
+ 1206  ls
+ 1207  cd github/mk622/matsu_tools/
+ 1208  ls
+ 1209  cd mcp
+ 1210  cd jupyter_mcp/
+ 1211  ls
+ 1212  docker compose up --build
+ 1213  docker compose down
+ 1214  docker compose up --build
+ 1215  docker compose down
+ 1216  docker compose up --build
+ 1217  docker compose down
+ 1218  docker compose up --build
+ 1219  docker compose down
+ 1220  docker compose up --build
+ 1221  docker compose down
+ 1222  docker compose up --build
+ 1223  docker compose down
+ 1224  docker compose up -d --build
+ 1225  # 共有確認（両方同じ runs に書けるか）
+ 1226  docker compose exec jupyter_mcp bash -lc 'pwd; whoami; ls -ld /home/jovyan/work /home/jovyan/work/runs; echo MCP_OK  > /home/jovyan/work/runs/_from_mcp.txt'
+ 1227  docker compose exec jupyter bash -lc 'python - <<PY
+ 1228  import os
+ 1229  from influxdb_client import InfluxDBClient
+ 1230  url=os.getenv("INFLUXDB_V2_URL"); token=os.getenv("INFLUXDB_V2_TOKEN"); org=os.getenv("INFLUXDB_V2_ORG")
+ 1231  q = """
+ 1232  from(bucket: "hk")
+ 1233    |> range(start: 2025-09-15T15:00:00Z, stop: 2025-09-16T03:00:00Z)
+ 1234    |> filter(fn: (r) => r._measurement == "opcua")
+ 1235    |> limit(n: 20)
+ 1236  """
+ 1237  with InfluxDBClient(url=url, token=token, org=org) as c:
+ 1238      tables = c.query_api().query(q)
+ 1239      total=0
+ 1240      for t in tables: total += len(t.records)
+ 1241      print("ROWS =", total)
+ 1242      for t in tables:
+ 1243          for r in t.records[:5]:
+ 1244              print(r.get_time(), r.get_field(), r.get_value())
+ 1245  PY'
+ 1246  docker compose exec jupyter bash -lc 'python - <<PY
+ 1247  import os
+ 1248  from influxdb_client import InfluxDBClient
+ 1249  url=os.getenv("INFLUXDB_V2_URL"); token=os.getenv("INFLUXDB_V2_TOKEN"); org=os.getenv("INFLUXDB_V2_ORG")
+ 1250  q = """
+ 1251  from(bucket: "hk")
+ 1252    |> range(start: 2025-09-15T15:00:00Z, stop: 2025-09-16T03:00:00Z)
+ 1253    |> filter(fn: (r) => r._measurement == "opcua")
+ 1254    |> limit(n: 20)
+ 1255  """
+ 1256  with InfluxDBClient(url=url, token=token, org=org) as c:
+ 1257      tables = c.query_api().query(q)
+ 1258      total=0
+ 1259      for t in tables: total += len(t.records)
+ 1260      print("ROWS =", total)
+ 1261      for t in tables:
+ 1262          for r in t.records[:5]:
+ 1263              print(r.get_time(), r.get_field(), r.get_value())
+ 1264  PY'
+ 1265  docker compose down
+ 1266  docker compose up -d --build
+ 1267  docker compose exec jupyter_mcp bash -lc '
+ 1268    set -e
+ 1269    echo "URL=$INFLUXDB_V2_URL ORG=$INFLUXDB_V2_ORG BUCKET=hk MEAS=opcua"
+ 1270    curl -sS "${INFLUXDB_V2_URL}/api/v2/query?org=${INFLUXDB_V2_ORG}" \
+ 1271      -H "Authorization: Token ${INFLUXDB_V2_TOKEN}" \
+ 1272      -H "Accept: application/csv" \
+ 1273      -H "Content-Type: application/vnd.flux" \
+ 1274      --data-binary @- <<FLUX
+ 1275  from(bucket: "hk")
+ 1276    |> range(start: 2025-09-15T15:00:00Z, stop: 2025-09-16T03:00:00Z)
+ 1277    |> filter(fn: (r) => r._measurement == "opcua")
+ 1278    |> limit(n: 5)
+ 1279  FLUX
+ 1280  '
+ 1281  docker compose exec jupyter_mcp bash -lc 'python - <<PY
+ 1282  import os, urllib.request, urllib.parse
+ 1283  base = os.getenv("INFLUXDB_V2_URL")
+ 1284  org  = urllib.parse.quote(os.getenv("INFLUXDB_V2_ORG") or "")
+ 1285  url  = f"{base}/api/v2/query?org={org}"
+ 1286  flux = """from(bucket: "hk")
+ 1287    |> range(start: 2025-09-15T15:00:00Z, stop: 2025-09-16T03:00:00Z)
+ 1288    |> filter(fn: (r) => r._measurement == "opcua")
+ 1289    |> limit(n: 5)
+ 1290  """
+ 1291  req = urllib.request.Request(
+ 1292      url,
+ 1293      data=flux.encode("utf-8"),
+ 1294      method="POST",
+ 1295      headers={
+ 1296          "Authorization": "Token " + (os.getenv("INFLUXDB_V2_TOKEN") or ""),
+ 1297          "Accept": "application/csv",
+ 1298          "Content-Type": "application/vnd.flux",
+ 1299      },
+ 1300  )
+ 1301  with urllib.request.urlopen(req) as r:
+ 1302      body = r.read().decode("utf-8")
+ 1303  print("\\n".join(body.splitlines()[:20]))
+ 1304  PY'
+ 1305  cd デスクトップ/
+ 1306  ls
+ 1307  cat memo 
+ 1308  sudo vim /etc/openfortivpn/config
+ 1309  sudo openfortivpn -c /etc/openfortivpn/config
+ 1310  cd デスクトップ/
+ 1311  cd github/mk622/matsu_tools/
+ 1312  ls
+ 1313  cd mcp
+ 1314  ls
+ 1315  cd jupyter_mcp
+ 1316  echo $RUN_BASE_DIR
+ 1317  echo $INFLUX_EXPORT_DIR
+ 1318  dockerps
+ 1319  docker ps
+ 1320  cd デスクトップ/
+ 1321  cd github/mk622/matsu_tools/
+ 1322  ls
+ 1323  cd mcp
+ 1324  cd jupyter_mcp
+ 1325  codex
+ 1326  ssh nses@192.168.233.101
+ 1327  ls
+ 1328  cd デスクトップ/
+ 1329  ls
+ 1330  cd github/mk622/matsu_tools/
+ 1331  ls
+ 1332  cd mcp
+ 1333  ls
+ 1334  cd jupyter_mcp/
+ 1335  docker compose down
+ 1336  cd ../
+ 1337  mv jupyter_mcp/ jupyter_mcp_bu/
+ 1338  ls
+ 1339  pwd
+ 1340  scp -r nses@192.168.233.101:/home/nses/Desktop/nses_training_sim/tmp/mcp/jupyter_mcp     /home/nse/デスクトップ/github/mk622/matsu_tools/mcp
+ 1341  ls
+ 1342  cd jupyter_mcp
+ 1343  docker compose up --build
+ 1344  docker compose down
+ 1345  docker compose up --build
+ 1346  docker compose down
+ 1347  docker compose up --build
+ 1348  docker compose down
+ 1349  docker compose up --build
+ 1350  docker compose build jupyter
+ 1351  docker compose up --build
+ 1352  pyenv shell 3.10.2
+ 1353  ls
+ 1354  cd mk622/matsu_tools/mcp/jupyter_mcp
+ 1355  pwd
+ 1356  pyenv shell 3.10.2
+ 1357  /home/nse/.pyenv/versions/3.10.2/bin/python /home/nse/デスクトップ/github/mk622/hk_agent_analysis/data/read_csv.py
+ 1358  cd mk622/hk_agent_analysis/
+ 1359  cd data
+ 1360  /home/nse/.pyenv/versions/3.10.2/bin/python /home/nse/デスクトップ/github/mk622/hk_agent_analysis/data/read_csv.py
+ 1361  cd デスクトップ/
+ 1362  ls
+ 1363  cd github/mk622/
+ 1364  ls
+ 1365  cd matsu_tools/
+ 1366  ls
+ 1367  cd mcp
+ 1368  ls
+ 1369  cd jupyter_mcp
+ 1370  ks
+ 1371  ls
+ 1372  docker compose up --build
+ 1373  docker ps
+ 1374  docker restart 6790da474a8f
+ 1375  cd ../
+ 1376  ls
+ 1377  cd ../
+ 1378  ls
+ 1379  cd ../../
+ 1380  ls
+ 1381  cd host/LibreChat/
+ 1382  ls
+ 1383  codex
+ 1384  docker compose up --build -d
+ 1385  docker compose down
+ 1386  docker compose up --build -d
+ 1387  cd ../../
+ 1388  ls
+ 1389  cd nsetps/
+ 1390  ls
+ 1391  git clone git@github.com:nsetps/ThinkPlant_TNS.git
+ 1392  docker ps
+ 1393  docker inspect f7e3c7d6e168
+ 1394  docke rps
+ 1395  docker ps
+ 1396  d2ae38a69ff4
+ 1397  docker inspect d2ae38a69ff4
+ 1398  docker ps
+ 1399  docker inspect f814c635ee35
+ 1400  cd ../mk622/airflow/
+ 1401  docker compose down
+ 1402  ls
+ 1403  docker ps
+ 1404  docker stop f814c635ee35
+ 1405  docker ps
+ 1406  cd ../../host/postgres/
+ 1407  ls
+ 1408  docker compose up --build
+ 1409  codex
+ 1410  docker compose up --build
+ 1411  docker compose up --build -no-cache
+ 1412  docker compose up --build --no-cache
+ 1413  docker compose up --build --nocache
+ 1414  docker compose up --build -nocache
+ 1415  ls
+ 1416  cd ../
+ 1417  ls
+ 1418  cd ../
+ 1419  ls
+ 1420  cd nsetps/
+ 1421  ls
+ 1422  cd ThinkPlant_TNS/
+ 1423  ls
+ 1424  codex
+ 1425  sudo lsof -iTCP:8080 -sTCP:LISTEN -nP
+ 1426  docker ps --filter "publish=8080"
+ 1427  sudo ps -fp 2218
+ 1428  ls -l /proc/2218/cwd
+ 1429  ls -l /proc/2218/exe
+ 1430  sudo kill 2218
+ 1431  # 8080 を使っているプロセスの特定
+ 1432  sudo ss -ltnp | grep :8080
+ 1433  # もしくは
+ 1434  sudo lsof -i :8080
+ 1435  ps -p 3754464 -o pid,ppid,cmd,etime
+ 1436  pwdx 3754464
+ 1437  ps -p 3754464 -o pid,ppid,cmd,etime
+ 1438  pwdx 3754464
+ 1439  systemctl --user status code-server
+ 1440  systemctl --user stop code-server
+ 1441  ss -ltnp | grep :8080
+ 1442  docker compose up --build
+ 1443  docker compose up --build -d
+ 1444  python load_trouble_list_csv.py --csv trouble_list.csv --table trouble_list
+ 1445  python3 load_trouble_list_csv.py --csv trouble_list.csv --table trouble_list
+ 1446  cd ../../
+ 1447  lcd
+ 1448  ls
+ 1449  cd nsetps/ThinkPlant_TNS/
+ 1450  l
+ 1451  nse@mk-devpc:~/デスクトップ/github/host/postgres$ python load_trouble_list_csv.py --csv trouble_list.csv --table trouble_list
+ 1452  /usr/bin/python: can't open file 'load_trouble_list_csv.py': [Errno 2] No such file or directory
+ 1453  nse@mk-devpc:~/デスクトップ/github/host/postgres$ python3 load_trouble_list_csv.py --csv trouble_list.csv --table trouble_list
+ 1454  /usr/bin/python3: can't open file 'load_trouble_list_csv.py': [Errno 2] No such file or directory
+ 1455  nse@mk-devpc:~/デスクトップ/github/host/postgres$ 
+ 1456  ls
+ 1457  python3 extract_trouble_list_csv.py 
+ 1458  python3 extract_trouble_list_csv.py --file "trouble_list/20250617_NSET) Trouble list 1.xlsx" --out  "trouble_list.csv"
+ 1459  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db   "postgresql+psycopg2://admin:Admin001@localhost:8080/trouble_list" --if-exists replace
+ 1460  pip install psycopg2
+ 1461  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db   "postgresql+psycopg2://admin:Admin001@localhost:8080/trouble_list" --if-exists replace
+ 1462  python3  -m pip install --user psycopg2-binary
+ 1463  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db   "postgresql+psycopg2://admin:Admin001@localhost:8080/trouble_list" --if-exists replace
+ 1464  docker ps
+ 1465  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db --db "postgresql+psycopg2://admin:Admin001@localhost:5433/trouble_list" --if-exists replace
+ 1466  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db "postgresql+psycopg2://admin:Admin001@localhost:5433/trouble_list" --if-exists replace
+ 1467  docker exec -it pg16 psql -U postgres -c "CREATE DATABASE trouble_list OWNER admin ENCODING 'UTF8';"
+ 1468  docker exec -e PGPASSWORD=Admin001 -it pg16 psql -U admin -d postgres -c "CREATE DATABASE trouble_list OWNER admin ENCODING 'UTF8';"
+ 1469  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db   "postgresql+psycopg2://admin:Admin001@localhost:5433/trouble_list" --if-exists replace
+ 1470  psql -h localhost -p 5433 -U admin -d trouble_list -c "SELECT COUNT(*) FROM trouble_list;"
+ 1471  sudo apt install postgresql-client-common
+ 1472  psql -h localhost -p 5433 -U admin -d trouble_list -c "SELECT COUNT(*) FROM trouble_list;"
+ 1473  docker exec -e PGPASSWORD=Admin001 -it pg16 psql -U admin -d trouble_list -c "SELECT COUNT(*) FROM trouble_list;"
+ 1474  ls
+ 1475  docker ps
+ 1476  docker restart 6790da474a8f
+ 1477  docker restart edgeHub
+ 1478  sudo iotedge restart edgeHub
+ 1479  docker ps
+ 1480  # ランタイム全体を再起動
+ 1481  sudo systemctl restart iotedge
+ 1482  sudo systemctl status iotedge
+ 1483  iotedge list
+ 1484  # IoT Edge ランタイムの再起動（全モジュール再起動）
+ 1485  iotedge restart edgeAgent
+ 1486  iotedge list
+ 1487  gnome-screenshot --area
+ 1488  docker ps
+ 1489  docker compose down
+ 1490  docker compose up --build
+ 1491  docker compose down
+ 1492  docker compose up --build
+ 1493  cd ../
+ 1494  LM-Studio-0.3.23-3-x64.AppImage
+ 1495  ls
+ 1496  LM-Studio-0.3.23-3-x64.AppImage
+ 1497  open LM-Studio-0.3.23-3-x64.AppImage
+ 1498  cd ../../
+ 1499  ls
+ 1500  cd nsetps/
+ 1501  ls
+ 1502  cd ThinkPlant_TNS/
+ 1503  ls
+ 1504  python3 extract_trouble_list_csv.py 
+ 1505  python3 load_trouble_list_csv.py 
+ 1506  python3 load_trouble_list_csv.py --csv  "trouble_list.csv" --table trouble_list --db   "postgresql+psycopg2://admin:Admin001@localhost:5433/trouble_list" --if-exists replace
+ 1507  docker ps
+ 1508  docker logs 2e285a54d4fb
+ 1509  docker logs -f 2e285a54d4fb
+ 1510  docker ps
+ 1511  docker logs -f 2e285a54d4fb
+ 1512  docker run --gpus all -p 9000:9000 --shm-size=4g vllm/vllm-openai:latest --model llava-hf/llava-1.5-7b-hf --chat-template template_llava.jinja
+ 1513  cd デスクトップ/
+ 1514  cd github/mk622/
+ 1515  git clone git@github.com:mk622/LLaVA.git
+ 1516  docker system prune -a
+ 1517  git clone git@github.com:mk622/LLaVA.git
+ 1518  cd LLaVA/
+ 1519  docker compose --profile build121 up -d vllm-build121
+ 1520  docker system prune -a
+ 1521  docker compose --profile prebuilt up -d vllm-prebuilt
+ 1522  docker compose up --build
+ 1523  # プロジェクト直下で
+ 1524  docker compose build --no-cache vllm
+ 1525  docker compose up --build
+ 1526  docker compose up --build --remove-orphans
+ 1527  docker compose build vllm
+ 1528  docker compose up
+ 1529  docker compose up -d
+ 1530  docker logs -f llava-vllm-1
+ 1531  nvidia-smi
+ 1532  # 1) vLLM だけ先に起動して状態を見る
+ 1533  docker compose up -d vllm
+ 1534  docker logs -f --tail=200 llava-vllm-1
+ 1535  docker compose up -d app
+ 1536  curl -sf http://localhost:9000/health && echo OK
+ 1537  curl -s  http://localhost:9000/v1/models | jq .
+ 1538  mkdir -p ./data/in ./data/out_true ./data/out_false ./data/json
+ 1539  ls
+ 1540  cd data/
+ 1541  ls
+ 1542  cd ../
+ 1543  ls
+ 1544  # ===== ここから全部コピペ =====
+ 1545  set -e
+ 1546  # 作業ディレクトリ（好きな場所/名前に変えてOK）
+ 1547  PROJECT_DIR="$(pwd)/LLaVA"
+ 1548  mkdir -p "$PROJECT_DIR"
+ 1549  cd "$PROJECT_DIR"
+ 1550  # ディレクトリ
+ 1551  mkdir -p vllm/templates client data/in data/out_true data/out_false data/json
+ 1552  # docker-compose.yml
+ 1553  cat > docker-compose.yml <<'YAML'
+ 1554  services:
+ 1555    vllm:
+ 1556      build:
+ 1557        context: ./vllm
+ 1558        dockerfile: Dockerfile
+ 1559      container_name: llava-vllm-1
+ 1560      ports:
+ 1561        - "9000:8000"
+ 1562      environment:
+ 1563        - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+ 1564      deploy:
+ 1565        resources:
+ 1566          reservations:
+ 1567            devices:
+ 1568              - capabilities: [gpu]
+ 1569      volumes:
+ 1570        - ./data:/data:ro
+ 1571        - ./vllm/templates:/opt/templates:ro
+ 1572      command:
+ 1573        - "--model=llava-hf/llava-1.5-7b-hf"
+ 1574        - "--chat-template=/opt/templates/template_llava.jinja"
+ 1575        - "--trust-remote-code"
+ 1576        - "--enforce-eager"
+ 1577        - "--gpu-memory-utilization=0.85"
+ 1578        - "--max-model-len=3072"
+ 1579      healthcheck:
+ 1580        test: ["CMD", "bash", "-lc", "curl -sf http://localhost:8000/v1/models >/dev/null"]
+ 1581        interval: 20s
+ 1582        timeout: 5s
+ 1583        retries: 10
+ 1584  YAML
+ 1585  # vllm/Dockerfile
+ 1586  cat > vllm/Dockerfile <<'DOCKER'
+ 1587  FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
+ 1588  RUN apt-get update && apt-get install -y --no-install-recommends \
+ 1589      git wget curl ca-certificates python3 python3-pip python3-venv \
+ 1590   && rm -rf /var/lib/apt/lists/*
+ 1591  RUN python3 -m pip install --upgrade pip setuptools wheel
+ 1592  WORKDIR /app
+ 1593  COPY requirements.txt /app/requirements.txt
+ 1594  RUN pip install -r /app/requirements.txt
+ 1595  COPY entrypoint.sh /app/entrypoint.sh
+ 1596  RUN chmod +x /app/entrypoint.sh
+ 1597  EXPOSE 8000
+ 1598  ENTRYPOINT ["/app/entrypoint.sh"]
+ 1599  DOCKER
+ 1600  # vllm/requirements.txt
+ 1601  cat > vllm/requirements.txt <<'REQ'
+ 1602  --extra-index-url https://download.pytorch.org/whl/cu121
+ 1603  vllm==0.6.3
+ 1604  transformers==4.45.2
+ 1605  tokenizers>=0.15.2
+ 1606  accelerate>=0.29.0
+ 1607  sentencepiece
+ 1608  pillow
+ 1609  torch==2.4.0+cu121
+ 1610  torchvision==0.19.0+cu121
+ 1611  uvicorn
+ 1612  fastapi
+ 1613  REQ
+ 1614  # vllm/entrypoint.sh
+ 1615  cat > vllm/entrypoint.sh <<'SH'
+ 1616  #!/usr/bin/env bash
+ 1617  set -euo pipefail
+ 1618  exec python3 -m vllm.entrypoints.openai.api_server \
+ 1619    --host 0.0.0.0 \
+ 1620    --port 8000 \
+ 1621    "$@"
+ 1622  SH
+ 1623  chmod +x vllm/entrypoint.sh
+ 1624  # vllm/templates/template_llava.jinja
+ 1625  cat > vllm/templates/template_llava.jinja <<'JINJA'
+ 1626  {%- set messages = messages if messages is not none else [] -%}
+ 1627  {%- for message in messages -%}
+ 1628  {%- if message['role'] == 'system' -%}
+ 1629  ### System:
+ 1630  {{ message['content'] | trim }}
+ 1631  {%- elif message['role'] == 'user' -%}
+ 1632  ### User:
+ 1633  {%- if message['content'] is iterable and message['content'] is not string -%}
+ 1634  {%- for item in message['content'] -%}
+ 1635  {%- if item['type'] == 'text' -%}
+ 1636  {{ item['text'] | trim }}
+ 1637  {%- elif item['type'] == 'image_url' -%}
+ 1638  <image>{{ item['image_url']['url'] }}</image>
+ 1639  {%- endif -%}
+ 1640  {%- endfor -%}
+ 1641  {%- else -%}
+ 1642  {{ message['content'] | trim }}
+ 1643  {%- endif -%}
+ 1644  {%- elif message['role'] == 'assistant' -%}
+ 1645  ### Assistant:
+ 1646  {{ message['content'] | trim }}
+ 1647  {%- endif -%}
+ 1648  {%- endfor -%}
+ 1649  ### Assistant:
+ 1650  JINJA
+ 1651  # client/requirements.txt
+ 1652  cat > client/requirements.txt <<'REQ'
+ 1653  PyYAML>=6.0
+ 1654  requests>=2.31.0
+ 1655  REQ
+ 1656  # client/config.yaml
+ 1657  cat > client/config.yaml <<'YAML'
+ 1658  openai_base_url: "http://localhost:9000/v1"
+ 1659  api_key: "EMPTY"
+ 1660  model: "llava-hf/llava-1.5-7b-hf"
+ 1661  input_dir: "./data/in"
+ 1662  json_out_dir: "./data/json"
+ 1663  image_out_true_dir: "./data/out_true"
+ 1664  image_out_false_dir: "./data/out_false"
+ 1665  container_mount_root: "/data"
+ 1666  instruction: |
+ 1667    あなたはごみ焼却設備の前段で処理不適物を検査する監視員です。
+ 1668    次の対象が1つでも写っていれば True、無ければ False。
+ 1669    対象:
+ 1670    - リチウム電池（ボタン電池、円筒、モバイルバッテリ等）
+ 1671    - 大きな金属片（刃物、鉄の塊、工具等）
+ 1672    - 家電（電気ケトル、ドライヤー、ゲーム機、小型家電全般）
+ 1673    可能なら代表の1点座標 (x,y) を画像左上原点のピクセル単位で返す。
+ 1674    返却は必ず JSON のみ:
+ 1675    {"is_forbidden": bool, "reason": string, "point": [x, y]}
+ 1676  temperature: 0
+ 1677  max_tokens: 256
+ 1678  retry: 2
+ 1679  YAML
+ 1680  # client/batch_vision.py
+ 1681  cat > client/batch_vision.py <<'PY'
+ 1682  import os
+ 1683  import sys
+ 1684  import json
+ 1685  import time
+ 1686  import shutil
+ 1687  import glob
+ 1688  import re
+ 1689  from typing import Any, Dict, Optional
+ 1690  import yaml
+ 1691  import requests
+ 1692  def load_config(path: str) -> Dict[str, Any]:
+ 1693      with open(path, "r", encoding="utf-8") as f:
+ 1694          return yaml.safe_load(f)
+ 1695  def ensure_dirs(*dirs: str):
+ 1696      for d in dirs:
+ 1697          os.makedirs(d, exist_ok=True)
+ 1698  def build_container_path(host_path: str, host_input_root: str, container_mount_root: str) -> str:
+ 1699      rel = os.path.relpath(host_path, start=os.path.abspath(host_input_root))
+ 1700      return os.path.join(container_mount_root, rel).replace("\\", "/")
+ 1701  def extract_json(text: str) -> Optional[Dict[str, Any]]:
+ 1702      m = re.search(r"\{.*\}", text, re.DOTALL)
+ 1703      if not m:
+ 1704          return None
+ 1705      try:
+ 1706          return json.loads(m.group(0))
+ 1707      except Exception:
+ 1708          return None
+ 1709  def main():
+ 1710      cfg = load_config(os.path.join(os.path.dirname(__file__), "config.yaml"))
+ 1711      base_url   = cfg["openai_base_url"].rstrip("/")
+ 1712      api_key    = cfg.get("api_key", "EMPTY")
+ 1713      model      = cfg["model"]
+ 1714      input_dir  = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", cfg["input_dir"]))
+ 1715      json_dir   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", cfg["json_out_dir"]))
+ 1716      out_true   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", cfg["image_out_true_dir"]))
+ 1717      out_false  = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", cfg["image_out_false_dir"]))
+ 1718      container_mount_root = cfg["container_mount_root"]
+ 1719      instruction = cfg["instruction"]
+ 1720      temperature = float(cfg.get("temperature", 0))
+ 1721      max_tokens  = int(cfg.get("max_tokens", 256))
+ 1722      retry       = int(cfg.get("retry", 2))
+ 1723      ensure_dirs(json_dir, out_true, out_false)
+ 1724      images = sorted(glob.glob(os.path.join(input_dir, "**", "*.jpg"), recursive=True))
+ 1725      if not images:
+ 1726          print(f"No .jpg found in: {input_dir}")
+ 1727          sys.exit(0)
+ 1728      print(f"Found {len(images)} images. Start processing...")
+ 1729      headers = {
+ 1730          "Content-Type": "application/json",
+ 1731          "Authorization": f"Bearer {api_key}",
+ 1732      }
+ 1733      url = f"{base_url}/chat/completions"
+ 1734      for idx, host_img in enumerate(images, 1):
+ 1735          container_img = build_container_path(host_img, input_dir, container_mount_root)
+ 1736          payload = {
+ 1737              "model": model,
+ 1738              "temperature": temperature,
+ 1739              "max_tokens": max_tokens,
+ 1740              "messages": [{
+ 1741                  "role": "user",
+ 1742                  "content": [
+ 1743                      {"type": "text", "text": instruction},
+ 1744                      {"type": "image_url", "image_url": {"url": f"file://{container_img}"}}
+ 1745                  ]
+ 1746              }]
+ 1747          }
+ 1748          data = None
+ 1749          for attempt in range(retry + 1):
+ 1750              try:
+ 1751                  r = requests.post(url, headers=headers, data=json.dumps(payload), timeout=120)
+ 1752                  r.raise_for_status()
+ 1753                  data = r.json()
+ 1754                  break
+ 1755              except Exception as e:
+ 1756                  if attempt >= retry:
+ 1757                      print(f"[{idx}/{len(images)}] ERROR request failed: {host_img} -> {e}")
+ 1758                  time.sleep(1.0)
+ 1759          if not data:
+ 1760              shutil.copy2(host_img, os.path.join(out_false, os.path.basename(host_img)))
+ 1761              continue
+ 1762          try:
+ 1763              content = data["choices"][0]["message"]["content"]
+ 1764          except Exception:
+ 1765              content = ""
+ 1766          parsed: Optional[Dict[str, Any]] = None
+ 1767          if content:
+ 1768              try:
+ 1769                  parsed = json.loads(content)
+ 1770              except Exception:
+ 1771                  parsed = extract_json(content)
+ 1772          if not parsed or not isinstance(parsed, dict):
+ 1773              parsed = {"is_forbidden": False, "reason": "parse_error", "point": [0, 0]}
+ 1774          is_forbidden = bool(parsed.get("is_forbidden", False))
+ 1775          json_path = os.path.join(json_dir, os.path.splitext(os.path.basename(host_img))[0] + ".json")
+ 1776          with open(json_path, "w", encoding="utf-8") as f:
+ 1777              json.dump(parsed, f, ensure_ascii=False, indent=2)
+ 1778          dst_dir = out_true if is_forbidden else out_false
+ 1779          shutil.copy2(host_img, os.path.join(dst_dir, os.path.basename(host_img)))
+ 1780          print(f"[{idx}/{len(images)}] {os.path.basename(host_img)} -> {parsed}")
+ 1781      print("Done.")
+ 1782  if __name__ == "__main__":
+ 1783      main()
+ 1784  PY
+ 1785  echo "✅ Files generated under: $PROJECT_DIR"
+ 1786  echo
+ 1787  echo "次の手順:"
+ 1788  echo "1) vLLM サーバ起動:   docker compose up -d"
+ 1789  echo "2) クライアント依存:  python3 -m pip install -r client/requirements.txt"
+ 1790  echo "3) 画像投入:          cp /path/to/*.jpg data/in/"
+ 1791  echo "4) 実行:              python3 client/batch_vision.py"
+ 1792  # ===== ここまで =====
+ 1793  cd ../
+ 1794  ls
+ 1795  cd 
+ 1796  vim split_mov_to_jpeg.py
+ 1797  python3 split_mov_to_jpeg.py 
+ 1798  cd デスクトップ/
+ 1799  cd github/mk622/V
+ 1800  cd github/mk622/
+ 1801  ls
+ 1802  cd LLaVA/
+ 1803  ls
+ 1804  docker compose build vllm
+ 1805  cd デスクトップ/
+ 1806  ls
+ 1807  cd github/mk622/
+ 1808  cd LLaVA/
+ 1809  python3 -m pip install --upgrade huggingface_hub hf-transfer
+ 1810  ls
+ 1811  mkdir -p ~/llava_offline
+ 1812  export HF_HOME=~/llava_offline
+ 1813  echo "HF_HOME=$HF_HOME"
+ 1814  python3 - <<'PY'
+ 1815  from huggingface_hub import snapshot_download
+ 1816  snapshot_download(
+ 1817      repo_id="llava-hf/llava-1.5-7b-hf",
+ 1818      local_dir="llava-1.5-7b-hf",
+ 1819      local_dir_use_symlinks=False,
+ 1820      resume_download=True,
+ 1821      max_workers=8,
+ 1822  )
+ 1823  PY
+ 1824  python3 - <<'PY'
+ 1825  from huggingface_hub import snapshot_download
+ 1826  snapshot_download(
+ 1827      repo_id="llava-hf/llava-1.5-7b-hf",
+ 1828      local_dir="llava-1.5-7b-hf",
+ 1829      local_dir_use_symlinks=False,
+ 1830      resume_download=True,
+ 1831      max_workers=8,
+ 1832  )
+ 1833  PY
+ 1834  ls -lh llava-1.5-7b-hf
+ 1835  mkdir -p ./hf_cache/hub/models--llava-hf--llava-1.5-7b-hf/snapshots/manual-offline
+ 1836  cp -r llava-1.5-7b-hf/* ./hf_cache/hub/models--llava-hf--llava-1.5-7b-hf/snapshots/manual-offline/
+ 1837  cat <<'EOF' > docker-compose.yml
+ 1838  services:
+ 1839    vllm:
+ 1840      build:
+ 1841        context: ./vllm
+ 1842        dockerfile: Dockerfile
+ 1843      container_name: llava-vllm-1
+ 1844      gpus: all
+ 1845      environment:
+ 1846        - HF_HOME=/root/.cache/huggingface
+ 1847        - HF_HUB_ENABLE_HF_TRANSFER=1
+ 1848        - HF_HUB_DISABLE_TELEMETRY=1
+ 1849        - HF_HUB_DISABLE_PROGRESS_BARS=1
+ 1850        - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+ 1851      volumes:
+ 1852        - ./hf_cache:/root/.cache/huggingface
+ 1853        - ./data:/data:ro
+ 1854        - ./vllm/templates:/opt/templates:ro
+ 1855      ports:
+ 1856        - "9000:8000"
+ 1857      entrypoint: ["/app/entrypoint.sh"]
+ 1858      command:
+ 1859        - "--model=llava-hf/llava-1.5-7b-hf"
+ 1860        - "--chat-template=/opt/templates/template_llava.jinja"
+ 1861        - "--trust-remote-code"
+ 1862        - "--enforce-eager"
+ 1863        - "--gpu-memory-utilization=0.75"
+ 1864        - "--max-model-len=2048"
+ 1865        - "--max-num-seqs=1"
+ 1866      healthcheck:
+ 1867        test: ["CMD-SHELL", "curl -sf http://localhost:8000/v1/models >/dev/null"]
+ 1868        interval: 20s
+ 1869        timeout: 10s
+ 1870        start_period: 480s
+ 1871        retries: 30
+ 1872  EOF
+ 1873  docker system prune -a
+ 1874  docker compose down
+ 1875  docker compose up -d vllm
+ 1876  docker compose logs -f vllm
+ 1877  docker compose build vllm
+ 1878  docker compose up -d vllm
+ 1879  docker compose logs -f vllm
+ 1880  docker compose logs vllm --tail=200
+ 1881  curl -sSf http://127.0.0.1:9000/v1/models | jq .
+ 1882  python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl
+ 1883  sudo apt-get update
+ 1884  sudo apt-get install -y fonts-noto-cjk
+ 1885  python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl
+ 1886  ls
+ 1887  cd data/
+ 1888  ls
+ 1889  cd in/
+ 1890  ls
+ 1891  cd ../
+ 1892  ls
+ 1893  cd out_true/
+ 1894  ls
+ 1895  sudo rm *.jpg
+ 1896  ls
+ 1897  cd ../
+ 1898  cd out_false/
+ 1899  sudo rm *.jpg
+ 1900  ls
+ 1901  cd ../
+ 1902  ls
+ 1903  cd in/
+ 1904  ls
+ 1905  cd IMG_2218
+ 1906  ls
+ 1907  cd ../
+ 1908  ls
+ 1909  cd ../
+ 1910  ls
+ 1911  cd client/
+ 1912  cd ../
+ 1913  python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl
+ 1914  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl > logs/batch_vision.out 2>&1 &
+ 1915  ls
+ 1916  mkdir -p logs
+ 1917  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl
+ 1918  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl > logs/batch_vision.out 2>&1
+ 1919  ls
+ 1920  cd logs/
+ 1921  ls
+ 1922  cat batch_vision.out 
+ 1923  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl   > logs/batch_vision.out 2>&1 &
+ 1924  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl   > logs/batch_vision.out 2>&1 &
+ 1925  cd ../
+ 1926  nohup python3 client/batch_vision.py --input-dir ./data/in --output ./data/out/responses.jsonl   > logs/batch_vision.out 2>&1 &
+ 1927  cd デスクトップ/
+ 1928  ls
+ 1929  cd github/mk622/LLaVA/
+ 1930  git add .
+ 1931  git commit -m "20250919"
+ 1932  git push origin main
+ 1933  git status
+ 1934  ls
+ 1935  cat .gitignore
+ 1936  git add .
+ 1937  git commit -m "20250919"
+ 1938  git push origin main
+ 1939  git add -A
+ 1940  git push origin main:feature-branch
+ 1941  ls
+ 1942  history
+ 1943  history > my_history.txt

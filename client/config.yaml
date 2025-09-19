@@ -1,0 +1,34 @@
+openai_base_url: "http://localhost:9000/v1"
+api_key: "EMPTY"
+model: "llava-hf/llava-1.5-7b-hf"
+
+input_dir: "./data/in"
+json_out_dir: "./data/json"
+image_out_true_dir: "./data/out_true"
+image_out_false_dir: "./data/out_false"
+
+container_mount_root: "/data"
+
+instruction: |
+  あなたはごみ焼却設備の前段で処理不適物を検査する監視員です。
+  次の処理不適物が1つでも写っていれば True、無ければ False と判定してください。
+  対象例:
+  - 乾電池・バッテリー類（リチウム電池、鉛蓄電池、モバイルバッテリー、ボタン電池等）
+  - スプレー缶、カセットボンベ、ガスボンベ、消火器などの加圧容器
+  - ライター、マッチ、花火など着火物
+  - ペンキ、シンナー、オイル等の可燃性・揮発性液体の容器
+  - 爆発物や火薬類、危険物ラベルが貼られた容器
+  - 大型家電・小型家電・情報機器・充電ケーブル類
+  - ハードディスク、電源ユニット、基板、電動工具、充電式工具バッテリー
+  - 大きな金属片、工具、刃物、金属フレーム
+  - ガラス、陶磁器、石、瓦、土砂
+  - 蛍光灯、電球、水銀を含む温度計・血圧計
+  - 注射器や針などの医療廃棄物
+  - バッテリー内蔵玩具やドローン等の電子デバイス
+  可能なら代表の1点座標 (x,y) を画像左上原点のピクセル単位で返してください。
+  返却は必ず JSON のみ:
+  {"is_forbidden": bool, "reason": string, "point": [x, y]}
+
+temperature: 0
+max_tokens: 256
+retry: 2

@@ -1,0 +1,24 @@
+{%- set messages = messages if messages is not none else [] -%}
+{%- for message in messages -%}
+{%- if message["role"] == "system" -%}
+### System:
+{{ message["content"] | trim }}
+{%- elif message["role"] == "user" -%}
+### User:
+{%- if message["content"] is iterable and message["content"] is not string -%}
+{%- for item in message["content"] -%}
+{%- if item["type"] == "text" -%}
+{{ item["text"] | trim }}
+{%- elif item["type"] == "image_url" -%}
+<image>{{ item["image_url"]["url"] }}</image>
+{%- endif -%}
+{%- endfor -%}
+{%- else -%}
+{{ message["content"] | trim }}
+{%- endif -%}
+{%- elif message["role"] == "assistant" -%}
+### Assistant:
+{{ message["content"] | trim }}
+{%- endif -%}
+{%- endfor -%}
+### Assistant:

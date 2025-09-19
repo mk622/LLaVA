@@ -35,11 +35,6 @@ data/**/*.csv
 data/**/*.json
 
 # Batch utility outputs
-bu/data/
-bu/app/outputs/
-bu/results/
-bu/data/images/
-bu/data/outputs/
 
 # Misc caches
 *.cache

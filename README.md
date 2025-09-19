@@ -1,48 +1,51 @@
-# LLaVA
+# LLaVA バッチ検査環境
 
-## Overview
-This repository wraps the LLaVA 1.5 7B vision-language model with a vLLM OpenAI-compatible API server and provides tools for batch image inspection.
+## 概要
+本リポジトリは LLaVA 1.5 7B ビジョン・ランゲージモデルを vLLM の OpenAI 互換 API として提供し、焼却施設向けの処理不適物検査を自動化するバッチクライアントを同梱しています。ローカル GPU 上で API サーバーを立ち上げ、`client/` ディレクトリのスクリプトで大量の画像を一括判定できます。
 
-## Requirements
-- Docker 24+ with the Compose plugin
-- NVIDIA GPU with 24 GB memory (tested with CUDA 12.1 runtime)
-- NVIDIA Container Toolkit configured for Docker
-- (Optional) Hugging Face token with access to llava-hf models
+## 必要環境
+- Docker 24 以降（Compose プラグイン必須）
+- 24 GB 以上の VRAM を持つ NVIDIA GPU（CUDA 12.1 ランタイムで検証済み）
+- NVIDIA Container Toolkit がセットアップ済みであること
+- 任意: Hugging Face で `llava-hf` モデルへアクセスできるトークン
 
-## Directory Layout
-- `docker-compose.yml` – main stack exposing the API on `http://localhost:9000/v1`
-- `vllm/` – Docker build context for the API server
-- `client/` – lightweight batch inspector that calls the API
-- `data/` – default input/output folders used by the client
-- `hf_cache/` – shared Hugging Face cache volume for downloaded models
-- `bu/` – legacy compose stack that runs the inspector inside containers
+## ディレクトリ構成
+- `docker-compose.yml` : API サーバーを `http://localhost:9000/v1` で公開する Compose 設定
+- `vllm/` : vLLM サーバー用 Docker ビルドコンテキスト
+- `client/` : 画像バッチ検査スクリプトと設定ファイル
+- `data/` : 入力 (`in/`)、JSON 出力 (`json/`)、検出結果 (`out_true/`, `out_false/`) の既定パス
+- `hf_cache/` : モデルダウンロードを共有する Hugging Face キャッシュ
+- `logs/`, `vllm/entrypoint.sh` など : 補助スクリプト
+- `bu/` : 旧構成（レガシー用途）。**GitHub へはアップロードしないでください。必要に応じて `.gitignore` で除外してください。**
 
-## Quick Start
-1. Clone this repository and switch into the project root.
-2. (Optional) export `HF_TOKEN` so the container can download gated models: `export HF_TOKEN=...`
-3. Build the vLLM image: `docker compose build`
-4. Launch the stack: `docker compose up -d`
-5. Tail logs until the health check passes: `docker compose logs -f vllm`
-6. Verify the API: `curl http://localhost:9000/v1/models`
-7. Stop and remove containers when finished: `docker compose down`
+## セットアップ手順
+1. リポジトリをクローンしプロジェクトルートへ移動します。
+2. 必要であれば `export HF_TOKEN=...` で Hugging Face トークンをエクスポートします。
+3. vLLM イメージをビルド: `docker compose build`
+4. サービス起動: `docker compose up -d`
+5. ヘルスチェックを確認: `docker compose logs -f vllm`
+6. API 動作確認: `curl http://localhost:9000/v1/models`
+7. 終了する際は `docker compose down`
 
-### Model Cache
-- The first start downloads the model into `hf_cache/`. Preserve this directory to avoid re-downloading.
-- `data/` is mounted read-only into the server. Place reference assets there if you want to test `file://` image URLs.
+### モデルキャッシュについて
+- 初回起動時は `hf_cache/` にモデルがダウンロードされます。再ダウンロードを避けるためディレクトリを保持してください。
+- `data/` ディレクトリはコンテナ内で `/data` として参照されます。
 
-## Batch Inspector (client/)
-1. Create a local Python environment (`python -m venv .venv && source .venv/bin/activate`).
-2. Install dependencies: `pip install -r client/requirements.txt`
-3. Adjust `client/config.yaml` if you need to change the API URL, model name, or output locations.
-4. Put `.jpg` files under `data/in/`; the script writes JSON results to `data/json/` and copies annotated hits into `data/out_true/` or `data/out_false/`.
-5. Run `python client/batch_vision.py`. The script retries transient API errors, enforces the allowed label set, and draws bounding boxes on positive detections.
+## バッチ検査クライアントの使い方 (`client/`)
+1. 任意の Python 環境を用意します（例: `python -m venv .venv && source .venv/bin/activate`）。
+2. 依存関係をインストール: `pip install -r client/requirements.txt`
+3. `client/config.yaml` を編集し、API URL やモデル名、判定ルールを必要に応じて調整します。
+4. 判定したい JPEG 画像を `data/in/` 以下へ配置します。
+5. `python client/batch_vision.py` を実行すると、以下が生成されます。
+   - 判定 JSON: `data/json/<ファイル名>.json`
+   - 判定結果画像: `data/out_true/` (検知あり) と `data/out_false/` (検知なし)。検知画像には赤枠とラベルが描画されます。
 
-## Legacy docker-compose stack (bu/)
-- `docker compose -f bu/docker-compose.yml up --build` spins up both the vLLM service and the in-container inspector defined in `bu/app/`.
-- Place source images in `bu/data/images/`; results are collected under `bu/app/outputs/`.
-- This stack is useful when you want a single command workflow but is not required for local development.
+## よくあるトラブルと対処
+- **ダウンロード失敗**: `HF_TOKEN` がコンテナ内に渡っているか `docker compose exec vllm env | grep HF_TOKEN` で確認してください。
+- **GPU メモリ不足**: `docker-compose.yml` の `--gpu-memory-utilization` や `--max-num-seqs` を調整します。
+- **API エラー**: `logs/` 内のログ、または `docker compose logs vllm` で詳細を確認してください。
 
-## Troubleshooting
-- Ensure the host driver and CUDA runtime match (the base image uses CUDA 12.1).
-- If downloads from Hugging Face fail, confirm that `HF_TOKEN` is available inside the container (`docker compose exec vllm env | grep HF_TOKEN`).
-- Large batches may require tuning `--gpu-memory-utilization` or `--max-num-seqs` in `docker-compose.yml`.
+## 注意事項
+- `bu/` ディレクトリはデバッグ目的の旧スタックです。GitHub 等の共有リポジトリには含めないでください。
+- 生成結果やログには個人情報が含まれる可能性があるため、取り扱いに注意してください。
+

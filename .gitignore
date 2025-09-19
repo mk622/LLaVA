@@ -1,0 +1,46 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS & editor
+.DS_Store
+.idea/
+*.swp
+
+# Logs & runtime outputs
+logs/
+nohup.out
+*.log
+
+# Model weights & caches
+hf_cache/
+llava-1.5-7b-hf/
+
+# Generated data artifacts
+data/in/
+data/json/
+data/out_true/
+data/out_false/
+data/movies/
+data/**/*.csv
+data/**/*.json
+
+# Batch utility outputs
+bu/data/
+bu/app/outputs/
+bu/results/
+bu/data/images/
+bu/data/outputs/
+
+# Misc caches
+*.cache
+*.tmp

@@ -35,6 +35,7 @@ data/**/*.csv
 data/**/*.json
 
 # Batch utility outputs
+bu
 
 # Misc caches
 *.cache
